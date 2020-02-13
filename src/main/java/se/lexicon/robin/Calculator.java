@@ -16,34 +16,32 @@ public class Calculator {
             firstNumber = getNumber();
             operator = getOperator();
             secondNumber = getNumber();
-            // A check to make sure they don't try to divide with 0.
-            if (firstNumber == 0.0 || secondNumber == 0.0 && operator == '/') {
-                System.out.println("Can't divide with 0 try again");
-            } else {
-                switch (operator) {
-                    case '+':
-                        System.out.println("Result is; " + addition(firstNumber, secondNumber));
-                        break;
-                    case '-':
-                        System.out.println("Result is: " + subtraction(firstNumber, secondNumber));
-                        break;
-                    case '*':
-                        System.out.println("Result is: " + multiplier(firstNumber, secondNumber));
-                        break;
-                    case '/':
+            switch (operator) {
+                case '+':
+                    System.out.println("Result is; " + addition(firstNumber, secondNumber));
+                    break;
+                case '-':
+                    System.out.println("Result is: " + subtraction(firstNumber, secondNumber));
+                    break;
+                case '*':
+                    System.out.println("Result is: " + multiplier(firstNumber, secondNumber));
+                    break;
+                case '/':
+                    // A check to make sure they don't try to divide with 0.
+                    if (firstNumber == 0.0 || secondNumber == 0.0){
+                        System.out.println("Can't divide with 0 try again");
+                    }else {
                         System.out.println("Result is: " + divide(firstNumber, secondNumber));
-                        break;
-                    default:
-                        System.out.println("error");
-                        break;
-                }
+                    }
+                    break;
+                default:
+                    System.out.println("error");
+                    break;
             }
             running = menuOption(); // Stay in loop command
         }
     }
-     static double addition(double firstNumber , double secondNumber){
-        return firstNumber + secondNumber;
-     }
+     static double addition(double firstNumber , double secondNumber){ return firstNumber + secondNumber; }
 
      static double subtraction(double firstNumber , double secondNumber){
         return firstNumber - secondNumber;
@@ -53,9 +51,7 @@ public class Calculator {
         return firstNumber * secondNumber;
      }
 
-     static double divide(double firstNumber, double secondNumber){
-        return firstNumber / secondNumber;
-     }
+     static double divide(double firstNumber, double secondNumber) { return firstNumber / secondNumber; }
 
     static String getStringFromUser() {
         // Simple scanner to get a string from user.
