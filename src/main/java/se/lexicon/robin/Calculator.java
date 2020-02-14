@@ -20,20 +20,20 @@ public class Calculator {
             secondNumber = getNumber();
             switch (operator) {
                 case '+':
-                    System.out.println("Result is; " + addition(firstNumber, secondNumber));
+                    System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + addition(firstNumber, secondNumber));
                     break;
                 case '-':
-                    System.out.println("Result is: " + subtraction(firstNumber, secondNumber));
+                    System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + subtraction(firstNumber, secondNumber));
                     break;
                 case '*':
-                    System.out.println("Result is: " + multiplier(firstNumber, secondNumber));
+                    System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + multiplier(firstNumber, secondNumber));
                     break;
                 case '/':
                     // A check to make sure they don't try to divide with 0.
                     if (firstNumber == 0.0 || secondNumber == 0.0){
                         System.out.println("Can't divide with 0 try again");
                     }else {
-                        System.out.println("Result is: " + divide(firstNumber, secondNumber));
+                        System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + divide(firstNumber, secondNumber));
                     }
                     break;
                 default:
@@ -43,6 +43,7 @@ public class Calculator {
             running = menuOption(); // Stay in loop command.
         }
     }
+    // Methods for calculating the 4 basic ways.
      static double addition(double firstNumber , double secondNumber){ return firstNumber + secondNumber; }
 
      static double subtraction(double firstNumber , double secondNumber){ return firstNumber - secondNumber; }

@@ -79,6 +79,17 @@ public class AppTest
     }
 
     @Test
+    public void testSubtractionTwoNegative(){
+        number1 = -50;
+        number2 = -30;
+        expected = -20;
+
+        actual = subtraction(number1,number2);
+
+        assertEquals(expected,actual,0.2);
+    }
+
+    @Test
     public void testSubtractionZero(){
         number1 = 42;
         number2 = 0;
