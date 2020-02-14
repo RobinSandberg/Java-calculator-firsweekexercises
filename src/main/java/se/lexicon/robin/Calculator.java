@@ -11,7 +11,7 @@ public class Calculator {
         double secondNumber;
         char operator;
         char running;
-        running = menuOption(); // Entry command
+        running = menuOption(); // Entry command into the loop.
         while(running == 'y' || running == 'Y') {
             firstNumber = getNumber();
             operator = getOperator();
@@ -38,18 +38,14 @@ public class Calculator {
                     System.out.println("error");
                     break;
             }
-            running = menuOption(); // Stay in loop command
+            running = menuOption(); // Stay in loop command.
         }
     }
      static double addition(double firstNumber , double secondNumber){ return firstNumber + secondNumber; }
 
-     static double subtraction(double firstNumber , double secondNumber){
-        return firstNumber - secondNumber;
-     }
+     static double subtraction(double firstNumber , double secondNumber){ return firstNumber - secondNumber; }
 
-     static double multiplier(double firstNumber , double secondNumber){
-        return firstNumber * secondNumber;
-     }
+     static double multiplier(double firstNumber , double secondNumber){ return firstNumber * secondNumber; }
 
      static double divide(double firstNumber, double secondNumber) { return firstNumber / secondNumber; }
 
@@ -57,7 +53,7 @@ public class Calculator {
         // Simple scanner to get a string from user.
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
-     }
+    }
 
      static char menuOption(){
         // Getting a char from user and checking if its a valid option.
