@@ -1,5 +1,7 @@
 package se.lexicon.robin;
 
+import javax.xml.bind.SchemaOutputResolver;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Calculator {
@@ -60,17 +62,20 @@ public class Calculator {
          // Using the get string method and looking at the first char in the string.
         System.out.println("User are you ready to do some calculation?");
         System.out.print("Y/N: ");
+        char[] validInput  = new char[]{'n','y','Y','N'};
         boolean valid = false;
-        char input = 'n';
+        String input;
+        char inputConfirmed = 'n';
         while (!valid){
-            input = getStringFromUser().charAt(0);
-            if(input == 'y' || input == 'n' || input == 'Y' || input == 'N'){
+            input = getStringFromUser();
+            if(Arrays.toString(validInput).contains(input)){
+                inputConfirmed = input.charAt(0);
                 valid = true;
             }else{
                 System.out.println("Wrong choose");
             }
         }
-        return input;
+        return inputConfirmed;
      }
 
       static double getNumber() {
@@ -93,10 +98,13 @@ public class Calculator {
         // Same as menu option but different options.
         System.out.print("Enter the calculation operator(+ , - , * , /) you want: ");
         boolean valid = false;
+        char[] validInput  = new char[]{'+','-','*','/'};
+        String input;
         char operator = '+';
         while(!valid){
-            operator = getStringFromUser().charAt(0);
-            if(operator == '+' || operator == '-' || operator == '*' || operator == '/'){
+            input = getStringFromUser();
+            if(Arrays.toString(validInput).contains(input)){
+                operator = input.charAt(0);
                 valid = true;
             }else{
                 System.out.println("Not an operator try again.");
@@ -104,4 +112,5 @@ public class Calculator {
         }
         return operator;
      }
+
 }
